@@ -34,7 +34,9 @@ enable_language(C ASM)
 # Create an executable object type
 add_executable(${CMAKE_PROJECT_NAME}
         Core/Src/ax_ps2.c
-        Core/Inc/ax_ps2.h)
+        Core/Inc/ax_ps2.h
+        MyLib/inc/ps2_command.h
+        MyLib/src/ps2_command.c)
 
 # Add STM32CubeMX generated sources
 add_subdirectory(cmake/stm32cubemx)
@@ -52,6 +54,7 @@ target_sources(${CMAKE_PROJECT_NAME} PRIVATE
 # Add include paths
 target_include_directories(${CMAKE_PROJECT_NAME} PRIVATE
     # Add user defined include paths
+        "MyLib/inc"
 )
 
 # Add project symbols (macros)
