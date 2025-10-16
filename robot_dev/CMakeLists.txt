@@ -19,7 +19,7 @@ if(NOT CMAKE_BUILD_TYPE)
 endif()
 
 # Set the project name
-set(CMAKE_PROJECT_NAME Motor)
+set(CMAKE_PROJECT_NAME robot)
 
 # Enable compile command to ease indexing with e.g. clangd
 set(CMAKE_EXPORT_COMPILE_COMMANDS TRUE)
@@ -33,10 +33,16 @@ enable_language(C ASM)
 
 # Create an executable object type
 add_executable(${CMAKE_PROJECT_NAME}
-        Core/Src/ax_ps2.c
-        Core/Inc/ax_ps2.h
-        MyLib/inc/ps2_command.h
-        MyLib/src/ps2_command.c)
+        Task/Src/TaskBase.cpp
+        Task/Inc/TaskBase.h
+        Task/Src/controlTask.cpp
+        Task/Inc/controlTask.h
+        Bsp/Src/bsp.cpp
+        Bsp/Inc/bsp.h
+        PS2/Inc/ax_ps2.h
+        PS2/Src/ax_ps2.c
+        PS2/Src/PS2.cpp
+        PS2/Inc/PS2.h)
 
 # Add STM32CubeMX generated sources
 add_subdirectory(cmake/stm32cubemx)
@@ -54,7 +60,10 @@ target_sources(${CMAKE_PROJECT_NAME} PRIVATE
 # Add include paths
 target_include_directories(${CMAKE_PROJECT_NAME} PRIVATE
     # Add user defined include paths
-        "MyLib/inc"
+        Bsp/Inc,
+        Task/Inc
+        PS2/Inc
+
 )
 
 # Add project symbols (macros)
