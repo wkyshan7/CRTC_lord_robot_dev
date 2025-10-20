@@ -8,14 +8,24 @@
 #pragma once
 #include "cmsis_os.h"
 #include "TaskBase.h"
-#include "../../Bsp/Inc/bsp.h"
 
-class controlTask: public TaskBase
+#ifdef __cplusplus
+
+class ControlTask: public TaskBase
 {
 public:
     void run() override;
-
 };
+#endif
 
+
+#ifdef __cplusplus
+extern "C"{
+#endif
+    void ControlTask_Init();
+
+#ifdef __cplusplus
+}
+#endif
 
 #endif //ROBOT_CONTROLTASK_H

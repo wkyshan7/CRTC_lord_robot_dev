@@ -15,7 +15,7 @@ void PS2::Init()
 void PS2::getData()
 {
     AX_PS2_ScanKey(&ps2);
-    osDelay(5);
+    osDelay(10);
 }
 
 void PS2::getJoystick()
@@ -72,3 +72,5 @@ bool PS2::isKey(uint8_t key)
     }
     return true;
 }
+
+

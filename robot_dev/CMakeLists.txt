@@ -42,7 +42,9 @@ add_executable(${CMAKE_PROJECT_NAME}
         PS2/Inc/ax_ps2.h
         PS2/Src/ax_ps2.c
         PS2/Src/PS2.cpp
-        PS2/Inc/PS2.h)
+        PS2/Inc/PS2.h
+        Task/Src/PS2Task.cpp
+        Task/Inc/PS2Task.h)
 
 # Add STM32CubeMX generated sources
 add_subdirectory(cmake/stm32cubemx)

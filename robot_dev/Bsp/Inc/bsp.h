@@ -5,7 +5,7 @@
 
 #ifndef ROBOT_BSP_H
 #define ROBOT_BSP_H
-#include "stm32f1xx_hal_tim.h"
+#include "tim.h"
 
 #ifdef __cplusplus
 
@@ -30,14 +30,16 @@ private:
     uint32_t m_channel;
     MotorType m_type;
 };
+#endif
 
-
+#ifdef __cplusplus
 extern "C" {
+#endif
 
-    void Init();
-    void setSpeed();
-    void setAngle();
-
+    void BSP_Init();
+    void Servo_setAngle(float angle);
+    void DC_setSpeed(float duty);
+#ifdef __cplusplus
 }
 #endif
 

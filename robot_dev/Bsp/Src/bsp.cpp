@@ -57,20 +57,20 @@ void Motor::Init()
 extern "C"{
     static Motor DC(&htim2, TIM_CHANNEL_1, MotorType::DC);
     static Motor DC2(&htim2, TIM_CHANNEL_2, MotorType::DC);
-    static Motor DC3(&htim2, TIM_CHANNEL_3, MotorType::DC);
+    static Motor Servo(&htim2, TIM_CHANNEL_3, MotorType::DC);
     static Motor DC4(&htim2, TIM_CHANNEL_4, MotorType::DC);
     static Motor DC5(&htim4, TIM_CHANNEL_1, MotorType::DC);
     static Motor DC6(&htim4, TIM_CHANNEL_2, MotorType::DC);
     static Motor DC7(&htim4, TIM_CHANNEL_3, MotorType::DC);
     static Motor DC8(&htim4, TIM_CHANNEL_4, MotorType::DC);
-    static Motor Servo(&htim3, TIM_CHANNEL_1, MotorType::Servo);
+
 
     void BSP_Init()
     {
         Servo.Init();
         DC.Init();
         DC2.Init();
-        DC3.Init();
+
         DC4.Init();
         DC5.Init();
         DC6.Init();
@@ -78,5 +78,13 @@ extern "C"{
         DC8.Init();
     }
 
+    void DC_setSpeed(float duty)
+    {
+
+    }
+    void Servo_setAngle(float angle)
+    {
+        Servo.setAngle(angle);
+    }
 }
 
