@@ -33,25 +33,7 @@
     </configurations>
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="506ac083-6e4f-4f43-b819-69a4daf96a52" name="更改" comment="测试机器人&#10;&#10;重构了项目，使用FreeRTOS进行开发&#10;&#10;已完成电机类和手柄类的编写">
-      <change afterPath="$PROJECT_DIR$/../robot_1/code/Bsp/Inc/Bsp.h" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/../robot_1/code/Bsp/Src/Bsp.cpp" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/../robot_1/code/Task/Inc/ControlTask.h" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/../robot_1/code/Task/Inc/TaskBase.h" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/../robot_1/code/Task/Src/ControlTask.cpp" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/../robot_1/code/Task/Src/TaskBase.cpp" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Task/Inc/PS2Task.h" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Task/Src/PS2Task.cpp" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Bsp/Inc/bsp.h" beforeDir="false" afterPath="$PROJECT_DIR$/Bsp/Inc/bsp.h" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Bsp/Src/bsp.cpp" beforeDir="false" afterPath="$PROJECT_DIR$/Bsp/Src/bsp.cpp" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/CMakeLists.txt" beforeDir="false" afterPath="$PROJECT_DIR$/CMakeLists.txt" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Core/Src/freertos.c" beforeDir="false" afterPath="$PROJECT_DIR$/Core/Src/freertos.c" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/PS2/Inc/PS2.h" beforeDir="false" afterPath="$PROJECT_DIR$/PS2/Inc/PS2.h" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/PS2/Src/PS2.cpp" beforeDir="false" afterPath="$PROJECT_DIR$/PS2/Src/PS2.cpp" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Task/Inc/controlTask.h" beforeDir="false" afterPath="$PROJECT_DIR$/Task/Inc/controlTask.h" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Task/Src/controlTask.cpp" beforeDir="false" afterPath="$PROJECT_DIR$/Task/Src/controlTask.cpp" afterDir="false" />
-    </list>
+    <list default="true" id="506ac083-6e4f-4f43-b819-69a4daf96a52" name="更改" comment="测试机器人&#10;&#10;重构了项目，使用FreeRTOS进行开发&#10;&#10;已完成电机类和手柄类的编写" />
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
     <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
@@ -229,6 +211,7 @@
       <workItem from="1760881820710" duration="599000" />
       <workItem from="1760883365841" duration="13000" />
       <workItem from="1760883403435" duration="101000" />
+      <workItem from="1760967284694" duration="1331000" />
     </task>
     <task id="LOCAL-00001" summary="测试机器人&#10;&#10;用于进行函数接口调试">
       <option name="closed" value="true" />
