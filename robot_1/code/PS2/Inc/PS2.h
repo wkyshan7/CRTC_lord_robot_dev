@@ -8,7 +8,7 @@
 #include "ax_ps2.h"
 
 extern JOYSTICK_TypeDef ps2;
-extern float Joystick[4]; //摇杆数据 [LUD,LLR,RUD,RLR] range:[-100, 100]
+extern float Joystick[4]; //摇杆数据 [L_UD,L_LR,R_UD,R_LR] range:[-100, 100]
 
 /*初始化PS2*/
 void PS2_Init();

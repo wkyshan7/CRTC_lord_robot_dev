@@ -43,7 +43,7 @@ extern "C" {
 
     void BSP_Init();
     void Servo_setAngle(float angle);
-    void LF_setSpeed(float duty);
+    void LF_setSpeed(float duty);  //[-1, 1]
     void LB_setSpeed(float duty);
     void RF_setSpeed(float duty);
     void RB_setSpeed(float duty);

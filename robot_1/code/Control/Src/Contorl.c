@@ -12,13 +12,27 @@ void Control()
     PS2_ScanKey(&ps2);
     getJoystick(ps2);
     Movement();
+    LiftUp();
 }
 
 void Movement()
 {
     MecanumCalculate(Joystick[0], Joystick[1], Joystick[3]);
+
     LF_setSpeed(MotorSpeed[0]);
     LB_setSpeed(MotorSpeed[1]);
     RF_setSpeed(MotorSpeed[2]);
     RB_setSpeed(MotorSpeed[3]);
+}
+
+void LiftUp()
+{
+    if (isKey(5, ps2))
+    {
+        Servo_setAngle(90);
+    }
+    else
+    {
+        Servo_setAngle(0);
+    }
 }
