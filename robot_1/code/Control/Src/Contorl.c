@@ -17,7 +17,7 @@ void Control()
 
 void Movement()
 {
-    MecanumCalculate(Joystick[0], Joystick[1], Joystick[3]);
+    MecanumCalculate(Joystick[0]/100, Joystick[1]/100, Joystick[3]/100);
 
     LF_setSpeed(MotorSpeed[0]);
     LB_setSpeed(MotorSpeed[1]);
@@ -29,10 +29,10 @@ void LiftUp()
 {
     if (isKey(5, ps2))
     {
-        Servo_setAngle(90);
+        // Servo_setAngle(90);
     }
     else
     {
-        Servo_setAngle(0);
+        // Servo_setAngle(0);
     }
 }
