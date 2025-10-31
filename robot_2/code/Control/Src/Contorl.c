@@ -17,7 +17,7 @@ void Control()
 
 void Movement()
 {
-    MecanumCalculate(Joystick[0]/100, Joystick[1]/100, Joystick[3]/100);
+    MecanumCalculate(-Joystick[0]/100, Joystick[1]/100, -Joystick[3]/100);
 
     LF_setSpeed(MotorSpeed[0]);
     LB_setSpeed(MotorSpeed[1]);

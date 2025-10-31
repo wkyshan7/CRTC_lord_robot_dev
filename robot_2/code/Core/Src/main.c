@@ -25,6 +25,7 @@
 /* USER CODE BEGIN Includes */
 #include "Bsp.h"
 #include "PS2.h"
+#include "Control.h"
 /* USER CODE END Includes */
 
 /* Private typedef -----------------------------------------------------------*/
@@ -76,7 +77,7 @@ int main(void)
   HAL_Init();
 
   /* USER CODE BEGIN Init */
-  JOYSTICK_TypeDef ps2;
+
   /* USER CODE END Init */
 
   /* Configure the system clock */
@@ -100,19 +101,9 @@ int main(void)
   /* USER CODE BEGIN WHILE */
   while (1)
   {
-    PS2_ScanKey(&ps2);
-    getJoystick(ps2);
-    if (isKey(5, ps2))
-    {
-      HAL_GPIO_WritePin(GPIOC, GPIO_PIN_13, GPIO_PIN_RESET);
-    }
-    else
-    {
-      HAL_GPIO_WritePin(GPIOC, GPIO_PIN_13, GPIO_PIN_SET);
-    }
-    LF_setSpeed(Joystick[0]/100);
-
+    Control();
     /* USER CODE END WHILE */
+
     /* USER CODE BEGIN 3 */
   }
   /* USER CODE END 3 */

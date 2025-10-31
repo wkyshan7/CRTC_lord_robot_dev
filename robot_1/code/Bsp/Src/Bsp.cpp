@@ -44,7 +44,7 @@ void Motor::setAngle(float angle)
     {
         angle = 180.0f;
     }
-    auto pulse = static_cast<uint16_t>(angle / 180.0f);
+    auto pulse = static_cast<uint16_t>(angle / 180.0f * 2000.0f);
     __HAL_TIM_SET_COMPARE(m_tim, m_channel, pulse);
 }
 
@@ -63,6 +63,7 @@ extern "C"{
     static Motor DC6(&htim4, TIM_CHANNEL_2, MotorType::DC);
     static Motor DC7(&htim4, TIM_CHANNEL_3, MotorType::DC);
     static Motor DC8(&htim4, TIM_CHANNEL_4, MotorType::DC);
+    static Motor Servo(&htim3, TIM_CHANNEL_1, MotorType::Servo);
 
     void BSP_Init()
     {
@@ -74,6 +75,7 @@ extern "C"{
         DC6.Init();
         DC7.Init();
         DC8.Init();
+        Servo.Init();
     }
 
     void LF_setSpeed(float duty) //DC1, DC2
@@ -186,6 +188,11 @@ extern "C"{
             DC7.setSpeed(0);
             DC8.setSpeed(0);
         }
+    }
+    void Servo_setAngle(float angle)
+    {
+        Servo.setAngle(angle);
+
     }
 }
 
