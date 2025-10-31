@@ -59,38 +59,38 @@ void getJoystick(JOYSTICK_TypeDef ps2)
     if (ps2.mode == 65)  // 判断PS2是否为红灯模式，如果是，所有摇杆数据皆为0
     {
 
-        // for (int i=0; i < 4; i++)
-        //     {
-        //     Joystick[i] = 0;
-        //     }
-        if (isKey(1, ps2))
-        {
-            Joystick[0] = 100;
-            Joystick[1] = 0;
-            Joystick[2] = 0;
-            Joystick[3] = 0;
-        }
-        if (isKey(3, ps2))
-        {
-            Joystick[0] = -100;
-            Joystick[1] = 0;
-            Joystick[2] = 0;
-            Joystick[3] = 0;
-        }
-        if (isKey(2, ps2))
-        {
-            Joystick[0] = 0;
-            Joystick[1] = 100;
-            Joystick[2] = 0;
-            Joystick[3] = 0;
-        }
-        if (isKey(1, ps2))
-        {
-            Joystick[0] = 0;
-            Joystick[1] = -100;
-            Joystick[2] = 0;
-            Joystick[3] = 0;
-        }
+        for (int i=0; i < 4; i++)
+            {
+            Joystick[i] = 0;
+            }
+        // if (isKey(1, ps2))
+        // {
+        //     Joystick[0] = 100;
+        //     Joystick[1] = 0;
+        //     Joystick[2] = 0;
+        //     Joystick[3] = 0;
+        // }
+        // if (isKey(3, ps2))
+        // {
+        //     Joystick[0] = -100;
+        //     Joystick[1] = 0;
+        //     Joystick[2] = 0;
+        //     Joystick[3] = 0;
+        // }
+        // if (isKey(2, ps2))
+        // {
+        //     Joystick[0] = 0;
+        //     Joystick[1] = 100;
+        //     Joystick[2] = 0;
+        //     Joystick[3] = 0;
+        // }
+        // if (isKey(1, ps2))
+        // {
+        //     Joystick[0] = 0;
+        //     Joystick[1] = -100;
+        //     Joystick[2] = 0;
+        //     Joystick[3] = 0;
+        // }
         return;
     }
 

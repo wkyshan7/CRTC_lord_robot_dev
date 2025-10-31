@@ -7,6 +7,8 @@
 
 #include "ax_ps2.h"
 
+
+extern uint8_t mode;
 extern JOYSTICK_TypeDef ps2;
 extern float Joystick[4]; //摇杆数据 [L_UD,L_LR,R_UD,R_LR] range:[-100, 100]
 

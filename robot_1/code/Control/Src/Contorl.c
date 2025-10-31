@@ -71,12 +71,18 @@ void Movement()
 
 void LiftUp()
 {
-    if (isKey(6, ps2))
+    if (isKey(5, ps2))
     {
-        Servo_setAngle(90);
+        Lift_setSpeed(0.2f);
+        // Lift_setSpeed(0.0f);
     }
     else if (isKey(7, ps2))
     {
-        Servo_setAngle(180);
+        Lift_setSpeed(-0.25f);
+        // Lift_setSpeed(0.0f);
+    }
+    else
+    {
+        Lift_setSpeed(0.0f);
     }
 }

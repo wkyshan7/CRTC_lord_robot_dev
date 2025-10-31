@@ -47,6 +47,7 @@ extern "C" {
     void LB_setSpeed(float duty);
     void RF_setSpeed(float duty);
     void RB_setSpeed(float duty);
+    void Lift_setSpeed(float duty);
 
 #ifdef __cplusplus
 

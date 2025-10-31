@@ -5,6 +5,7 @@
 #include "ax_ps2.h"
 #include "PS2.h"
 
+uint8_t mode = 0;
 JOYSTICK_TypeDef ps2;
 float Joystick[4];
 
