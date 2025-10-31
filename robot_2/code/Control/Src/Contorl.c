@@ -6,7 +6,6 @@
 #include "PS2.h"
 #include "Mecanum.h"
 #include "Bsp.h"
-#include "main.h"
 
 void Control()
 {
@@ -85,5 +84,17 @@ void LiftUp()
     else
     {
         Lift_setSpeed(0.0f);
+    }
+}
+
+void Door()
+{
+    if (isKey(15, ps2))
+    {
+        Servo_setAngle(90);
+    }
+    else if (isKey(16, ps2))
+    {
+        Servo_setAngle(180);
     }
 }

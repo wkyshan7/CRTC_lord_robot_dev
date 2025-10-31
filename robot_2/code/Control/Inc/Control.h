@@ -11,4 +11,6 @@ void Movement(); // 移动
 
 void LiftUp();  // 抬起外货舱
 
+void Door();  //  开关门
+
 #endif //CODE_CONTROL_H
