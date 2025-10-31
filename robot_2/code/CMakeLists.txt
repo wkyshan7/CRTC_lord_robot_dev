@@ -37,7 +37,13 @@ add_executable(${CMAKE_PROJECT_NAME}
         Bsp/Inc/Bsp.h
         PS2/Src/PS2.c
         PS2/Inc/PS2.h
-        PS2/Src/ax_ps2.c)
+        PS2/Src/ax_ps2.c
+        Control/Inc/Control.h
+        Control/Src/Contorl.c
+        Macanum/Inc/Mecanum.h
+        Macanum/Src/Mecanum.c
+        Control/Inc/Control.h
+)
 
 # Add STM32CubeMX generated sources
 add_subdirectory(cmake/stm32cubemx)
@@ -57,6 +63,8 @@ target_include_directories(${CMAKE_PROJECT_NAME} PRIVATE
     # Add user defined include paths
         Bsp/Inc
         PS2/Inc
+        Macanum/Inc
+        Control/Inc
 )
 
 # Add project symbols (macros)

@@ -8,8 +8,8 @@ float MotorSpeed[4];
 
 void MecanumCalculate(float Vx, float Vy, float omega)
 {
-    float LENGTH = 0.5f;
-    float WIDTH = 0.5f;
+    float LENGTH = 0.23f;
+    float WIDTH = 0.18f;
     float RADIUS = 1.0f;
 
     float R = LENGTH + WIDTH;

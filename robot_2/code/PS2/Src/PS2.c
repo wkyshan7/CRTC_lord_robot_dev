@@ -5,8 +5,8 @@
 #include "ax_ps2.h"
 #include "PS2.h"
 
-
-float Joystick[4] = {0, 0, 0, 0};
+JOYSTICK_TypeDef ps2;
+float Joystick[4];
 
 void PS2_Init()
 {
@@ -16,7 +16,7 @@ void PS2_Init()
 void PS2_ScanKey(JOYSTICK_TypeDef *JoystickStruct)
 {
     AX_PS2_ScanKey(JoystickStruct);
-    HAL_Delay(5);
+    HAL_Delay(10);
 }
 
 uint8_t isKey(uint8_t key, JOYSTICK_TypeDef ps2)
@@ -55,20 +55,38 @@ uint8_t isKey(uint8_t key, JOYSTICK_TypeDef ps2)
 
 void getJoystick(JOYSTICK_TypeDef ps2)
 {
-    uint8_t dataJoystick[4] = {ps2.LJoy_UD, ps2.LJoy_LR, ps2.RJoy_UD, ps2.RJoy_LR};
-    for (int i=0; i < 4; i++)
+    if (ps2.mode == 65)  // 判断PS2是否为红灯模式，如果是，所有摇杆数据皆为0
     {
-        if (dataJoystick[i] == 127)
+        if (isKey(1, ps2))
         {
-            Joystick[i] = 0;
+            for (int i=0; i < 4; i++)
+            {
+                Joystick[i] = 1;
+            }
+
         }
-        else if (dataJoystick[i] < 127)
+        else if (isKey(2, ps2))
+        {
+            Joystick[0] = 1;
+            Joystick[1] = 1;
+        }
+        return;
+    }
+
+    uint8_t dataJoystick[4] = {ps2.LJoy_UD, ps2.LJoy_LR, ps2.RJoy_UD, ps2.RJoy_LR};
+    for (int i=0; i < 4; i++)  //处理摇杆数据
+    {
+        if (dataJoystick[i] < 124)
         {
             Joystick[i] = ((128-dataJoystick[i])*100)/128;
         }
-        else if (dataJoystick[i] > 127)
+        else if (dataJoystick[i] > 134)
         {
             Joystick[i] = ((dataJoystick[i]-127)*100*-1)/128;
+        }
+        else
+        {
+            Joystick[i] = 0;
         }
     }
 }

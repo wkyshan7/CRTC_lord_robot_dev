@@ -29,10 +29,14 @@ void LiftUp()
 {
     if (isKey(5, ps2))
     {
-        Servo_setAngle(90);
+        Lift_setSpeed(0.2f);
+    }
+    else if (isKey(7, ps2))
+    {
+        Lift_setSpeed(-0.2f);
     }
     else
     {
-        Servo_setAngle(0);
+        Lift_setSpeed(0);
     }
 }
