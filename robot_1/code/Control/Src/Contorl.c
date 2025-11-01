@@ -73,12 +73,12 @@ void LiftUp()
 {
     if (isKey(5, ps2))
     {
-        Lift_setSpeed(0.2f);
+        Lift_setSpeed(0.25f);
         // Lift_setSpeed(0.0f);
     }
     else if (isKey(7, ps2))
     {
-        Lift_setSpeed(-0.25f);
+        Lift_setSpeed(-0.6f);
         // Lift_setSpeed(0.0f);
     }
     else

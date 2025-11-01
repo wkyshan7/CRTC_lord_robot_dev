@@ -63,9 +63,9 @@ extern "C"{
     static Motor DC6(&htim4, TIM_CHANNEL_2, MotorType::DC);
     static Motor DC7(&htim4, TIM_CHANNEL_3, MotorType::DC);
     static Motor DC8(&htim4, TIM_CHANNEL_4, MotorType::DC);
-    static Motor Servo(&htim3, TIM_CHANNEL_3, MotorType::Servo);
-    static Motor DC9(&htim3, TIM_CHANNEL_1, MotorType::DC);
-    static Motor DC10(&htim3, TIM_CHANNEL_2, MotorType::DC);
+    static Motor Servo(&htim3, TIM_CHANNEL_1, MotorType::Servo);
+    // static Motor DC9(&htim3, TIM_CHANNEL_1, MotorType::DC);
+    // static Motor DC10(&htim3, TIM_CHANNEL_2, MotorType::DC);
     static Motor DC11(&htim3, TIM_CHANNEL_3, MotorType::DC);
     static Motor DC12(&htim3, TIM_CHANNEL_4, MotorType::DC);
 
@@ -80,8 +80,8 @@ extern "C"{
         DC7.Init();
         DC8.Init();
         Servo.Init();
-        DC9.Init();
-        DC10.Init();
+        // DC9.Init();
+        // DC10.Init();
         DC11.Init();
         DC12.Init();
     }
@@ -205,22 +205,22 @@ extern "C"{
     {
         if (duty>0)
         {
-            DC9.setSpeed(duty);
-            DC10.setSpeed(0);
+            // DC9.setSpeed(duty);
+            // DC10.setSpeed(0);
             DC11.setSpeed(duty);
             DC12.setSpeed(0);
         }
         else if (duty<0)
         {
-            DC9.setSpeed(0);
-            DC10.setSpeed(-duty);
+            // DC9.setSpeed(0);
+            // DC10.setSpeed(-duty);
             DC11.setSpeed(0);
             DC12.setSpeed(-duty);
         }
         else
         {
-            DC9.setSpeed(0);
-            DC10.setSpeed(0);
+            // DC9.setSpeed(0);
+            // DC10.setSpeed(0);
             DC11.setSpeed(0);
             DC12.setSpeed(0);
         }

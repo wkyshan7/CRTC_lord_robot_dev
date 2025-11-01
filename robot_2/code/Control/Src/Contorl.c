@@ -13,11 +13,13 @@ void Control()
     getJoystick(ps2);
     Movement();
     LiftUp();
+    Door();
+
 }
 
 void Movement()
 {
-    MecanumCalculate(-Joystick[0]/100, Joystick[1]/100, -Joystick[3]/50);
+    MecanumCalculate(-Joystick[0]/100, -Joystick[1]/100, -Joystick[3]/50);
 
     float Gear_0 = 0.6f;
     float Gear_1 = 0.6f;
@@ -73,12 +75,12 @@ void LiftUp()
 {
     if (isKey(5, ps2))
     {
-        Lift_setSpeed(0.1f);
+        Lift_setSpeed(0.15f);
         // Lift_setSpeed(0.0f);
     }
     else if (isKey(7, ps2))
     {
-        Lift_setSpeed(-0.1f);
+        Lift_setSpeed(-0.15f);
         // Lift_setSpeed(0.0f);
     }
     else
@@ -89,11 +91,11 @@ void LiftUp()
 
 void Door()
 {
-    if (isKey(15, ps2))
+    if (isKey(11, ps2))
     {
         Servo_setAngle(90);
     }
-    else if (isKey(16, ps2))
+    else if (isKey(12, ps2))
     {
         Servo_setAngle(180);
     }
