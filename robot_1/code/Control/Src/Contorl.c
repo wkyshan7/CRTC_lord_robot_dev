@@ -17,10 +17,10 @@ void Control()
 
 void Movement()
 {
-    MecanumCalculate(Joystick[0]/100, -Joystick[1]/100, Joystick[3]/50);
+    MecanumCalculate(Joystick[0]/100, Joystick[1]/100, Joystick[3]/50);
 
-    float Gear_0 = 0.6f;
-    float Gear_1 = 0.6f;
+    float Gear_0 = 0.3f;
+    float Gear_1 = 0.3f;
     float Gear_2 = 0.9f;
 
     if (isKey(10, ps2))
@@ -78,7 +78,7 @@ void LiftUp()
     }
     else if (isKey(7, ps2))
     {
-        Lift_setSpeed(-0.6f);
+        Lift_setSpeed(-0.5f);
         // Lift_setSpeed(0.0f);
     }
     else

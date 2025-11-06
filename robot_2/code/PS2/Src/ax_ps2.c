@@ -3,13 +3,13 @@
 
 // PS2手柄的输入输出端口定义
 #define DI_PORT     GPIOB
-#define DI_PIN      GPIO_PIN_12
+#define DI_PIN      GPIO_PIN_4
 
 #define CMD_PORT    GPIOB
-#define CMD_PIN     GPIO_PIN_13
+#define CMD_PIN     GPIO_PIN_5
 
 #define CS_PORT     GPIOB
-#define CS_PIN      GPIO_PIN_14
+#define CS_PIN      GPIO_PIN_6
 
 #define CLK_PORT    GPIOB
 #define CLK_PIN     GPIO_PIN_15

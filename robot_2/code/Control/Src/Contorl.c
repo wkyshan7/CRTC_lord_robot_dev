@@ -23,7 +23,7 @@ void Movement()
 
     float Gear_0 = 0.6f;
     float Gear_1 = 0.6f;
-    float Gear_2 = 0.9f;
+    float Gear_2 = 1.0f;
 
     if (isKey(10, ps2))
     {
