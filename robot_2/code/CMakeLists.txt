@@ -42,6 +42,7 @@ add_executable(${CMAKE_PROJECT_NAME}
         Control/Src/Contorl.c
         Macanum/Inc/Mecanum.h
         Macanum/Src/Mecanum.c
+        ../../robot_1/code/Control/Src/Contorl.c
 )
 
 # Add STM32CubeMX generated sources
