@@ -19,7 +19,7 @@ void Control()
 
 void Movement()
 {
-    MecanumCalculate(-Joystick[0]/100, -Joystick[1]/100, -Joystick[3]/50);
+    MecanumCalculate(-Joystick[0]/100, 0, -Joystick[3]/50);
 
     float Gear_0 = 0.6f;
     float Gear_1 = 0.6f;

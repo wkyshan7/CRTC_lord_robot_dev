@@ -59,15 +59,15 @@ extern "C"{
     static Motor DC2(&htim2, TIM_CHANNEL_2, MotorType::DC);
     static Motor DC3(&htim2, TIM_CHANNEL_3, MotorType::DC);
     static Motor DC4(&htim2, TIM_CHANNEL_4, MotorType::DC);
-    static Motor DC5(&htim4, TIM_CHANNEL_1, MotorType::DC);
-    static Motor DC6(&htim4, TIM_CHANNEL_2, MotorType::DC);
-    static Motor DC7(&htim4, TIM_CHANNEL_3, MotorType::DC);
-    static Motor DC8(&htim4, TIM_CHANNEL_4, MotorType::DC);
-    static Motor Servo(&htim3, TIM_CHANNEL_3, MotorType::Servo);
-    static Motor DC9(&htim3, TIM_CHANNEL_1, MotorType::DC);
-    static Motor DC10(&htim3, TIM_CHANNEL_2, MotorType::DC);
-    static Motor DC11(&htim3, TIM_CHANNEL_3, MotorType::DC);
-    static Motor DC12(&htim3, TIM_CHANNEL_4, MotorType::DC);
+    // static Motor DC5(&htim4, TIM_CHANNEL_1, MotorType::DC);
+    // static Motor DC6(&htim4, TIM_CHANNEL_2, MotorType::DC);
+    // static Motor DC7(&htim4, TIM_CHANNEL_3, MotorType::DC);
+    // static Motor DC8(&htim4, TIM_CHANNEL_4, MotorType::DC);
+    // static Motor Servo(&htim3, TIM_CHANNEL_3, MotorType::Servo);
+    // static Motor DC9(&htim3, TIM_CHANNEL_1, MotorType::DC);
+    // static Motor DC10(&htim3, TIM_CHANNEL_2, MotorType::DC);
+    // static Motor DC11(&htim3, TIM_CHANNEL_3, MotorType::DC);
+    // static Motor DC12(&htim3, TIM_CHANNEL_4, MotorType::DC);
 
     void BSP_Init()
     {
@@ -75,15 +75,15 @@ extern "C"{
         DC2.Init();
         DC3.Init();
         DC4.Init();
-        DC5.Init();
-        DC6.Init();
-        DC7.Init();
-        DC8.Init();
-        // Servo.Init();
-        DC9.Init();
-        DC10.Init();
-        DC11.Init();
-        DC12.Init();
+        // DC5.Init();
+        // DC6.Init();
+        // DC7.Init();
+        // DC8.Init();
+        // // Servo.Init();
+        // DC9.Init();
+        // DC10.Init();
+        // DC11.Init();
+        // DC12.Init();
     }
 
     void LF_setSpeed(float duty) //DC1, DC2
@@ -114,7 +114,7 @@ extern "C"{
         }
     }
 
-    void LB_setSpeed(float duty)  //DC3, DC4
+    void RF_setSpeed(float duty)  //DC3, DC4
     {
         if (duty < -1.0f)
         {
@@ -142,85 +142,85 @@ extern "C"{
         }
     }
 
-    void RF_setSpeed(float duty)  //DC5, DC6
-    {
-        if (duty < -1.0f)
-        {
-            duty = -1.0f;
-        }
-        if (duty > 1.0f)
-        {
-            duty = 1.0f;
-        }
-
-        if (duty < 0.0f)
-        {
-            DC6.setSpeed(0-duty);
-            DC5.setSpeed(0);
-        }
-        else if (duty > 0.0f)
-        {
-            DC5.setSpeed(duty);
-            DC6.setSpeed(0);
-        }
-        else
-        {
-            DC5.setSpeed(0);
-            DC6.setSpeed(0);
-        }
-    }
-
-    void RB_setSpeed(float duty)  //DC7, DC8
-    {
-        if (duty < -1.0f)
-        {
-            duty = -1.0f;
-        }
-        if (duty > 1.0f)
-        {
-            duty = 1.0f;
-        }
-
-        if (duty < 0.0f)
-        {
-            DC8.setSpeed(0-duty);
-            DC7.setSpeed(0);
-        }
-        else if (duty > 0.0f)
-        {
-            DC7.setSpeed(duty);
-            DC8.setSpeed(0);
-        }
-        else
-        {
-            DC7.setSpeed(0);
-            DC8.setSpeed(0);
-        }
-    }
-
-    void Lift_setSpeed(float duty)
-    {
-        if (duty>0)
-        {
-            DC9.setSpeed(duty);
-            DC10.setSpeed(0);
-            DC11.setSpeed(duty);
-            DC12.setSpeed(0);
-        }
-        else if (duty<0)
-        {
-            DC9.setSpeed(0);
-            DC10.setSpeed(-duty);
-            DC11.setSpeed(0);
-            DC12.setSpeed(-duty);
-        }
-        else
-        {
-            DC9.setSpeed(0);
-            DC10.setSpeed(0);
-            DC11.setSpeed(0);
-            DC12.setSpeed(0);
-        }
-    }
+    // void RF_setSpeed(float duty)  //DC5, DC6
+    // {
+    //     if (duty < -1.0f)
+    //     {
+    //         duty = -1.0f;
+    //     }
+    //     if (duty > 1.0f)
+    //     {
+    //         duty = 1.0f;
+    //     }
+    //
+    //     if (duty < 0.0f)
+    //     {
+    //         DC6.setSpeed(0-duty);
+    //         DC5.setSpeed(0);
+    //     }
+    //     else if (duty > 0.0f)
+    //     {
+    //         DC5.setSpeed(duty);
+    //         DC6.setSpeed(0);
+    //     }
+    //     else
+    //     {
+    //         DC5.setSpeed(0);
+    //         DC6.setSpeed(0);
+    //     }
+    // }
+    //
+    // void RB_setSpeed(float duty)  //DC7, DC8
+    // {
+    //     if (duty < -1.0f)
+    //     {
+    //         duty = -1.0f;
+    //     }
+    //     if (duty > 1.0f)
+    //     {
+    //         duty = 1.0f;
+    //     }
+    //
+    //     if (duty < 0.0f)
+    //     {
+    //         DC8.setSpeed(0-duty);
+    //         DC7.setSpeed(0);
+    //     }
+    //     else if (duty > 0.0f)
+    //     {
+    //         DC7.setSpeed(duty);
+    //         DC8.setSpeed(0);
+    //     }
+    //     else
+    //     {
+    //         DC7.setSpeed(0);
+    //         DC8.setSpeed(0);
+    //     }
+    // }
+    //
+    // void Lift_setSpeed(float duty)
+    // {
+    //     if (duty>0)
+    //     {
+    //         DC9.setSpeed(duty);
+    //         DC10.setSpeed(0);
+    //         DC11.setSpeed(duty);
+    //         DC12.setSpeed(0);
+    //     }
+    //     else if (duty<0)
+    //     {
+    //         DC9.setSpeed(0);
+    //         DC10.setSpeed(-duty);
+    //         DC11.setSpeed(0);
+    //         DC12.setSpeed(-duty);
+    //     }
+    //     else
+    //     {
+    //         DC9.setSpeed(0);
+    //         DC10.setSpeed(0);
+    //         DC11.setSpeed(0);
+    //         DC12.setSpeed(0);
+    //     }
+    // }
 }
 
